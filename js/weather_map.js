@@ -91,7 +91,7 @@ let weatherData = {
             })
                 .getSource('point').setData(geojson);
         });
-        $.get("http://api.openweathermap.org/data/2.5/forecast", {
+        $.get("https://api.openweathermap.org/data/2.5/forecast", {
             APPID: keys.openWeather,
             q: city,
             units: "imperial"
@@ -101,7 +101,7 @@ let weatherData = {
     },
     updatePageCoord: function (coord) {
         //for today's weather
-        $.get("http://api.openweathermap.org/data/2.5/weather", {
+        $.get("https://api.openweathermap.org/data/2.5/weather", {
             APPID: keys.openWeather,
             lon: coord.lng.toFixed(3),
             lat: coord.lat.toFixed(3),
@@ -117,7 +117,7 @@ let weatherData = {
         })// .catch(error => console.log(error));
 
         //For weekly Forecast
-        $.get("http://api.openweathermap.org/data/2.5/forecast", {
+        $.get("https://api.openweathermap.org/data/2.5/forecast", {
             APPID: keys.openWeather,
             lon: coord.lng.toFixed(3),
             lat: coord.lat.toFixed(3),
